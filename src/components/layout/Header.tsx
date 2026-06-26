@@ -35,7 +35,11 @@ export default function Header() {
           <a href="#" className="flex items-center gap-2 group">
             <div className="w-9 h-9 bg-amber-500 rounded-lg flex items-center justify-center shadow-lg group-hover:bg-amber-400 transition-colors">
               {/* <Car className="w-5 h-5 text-slate-900" /> */}
-              <img src="/logo.jpg" alt="logo" className="w-full h-full rounded text-slate-900" />
+              <img
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.jpg`}
+                alt="logo"
+                className="w-full h-full rounded text-slate-900"
+              />
             </div>
             <div>
               <span className="text-white font-bold text-lg leading-none block">Ayaan Travels</span>
