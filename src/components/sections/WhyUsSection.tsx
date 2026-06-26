@@ -44,7 +44,7 @@ const whyUsItems = [
 
 export default function WhyUsSection() {
   return (
-    <section className="bg-slate-900 py-20 lg:py-28 overflow-hidden">
+    <section id="why-us" className="bg-slate-900 py-20 lg:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left column - text */}
@@ -64,7 +64,7 @@ export default function WhyUsSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl font-black text-white mb-5 leading-tight"
             >
-              The Most Trusted Cab in
+              Built for Family Travel from
               <span className="text-amber-400"> Zaheerabad</span>
             </motion.h2>
             <motion.p
@@ -74,9 +74,9 @@ export default function WhyUsSection() {
               transition={{ delay: 0.2 }}
               className="text-slate-400 text-base leading-relaxed mb-8"
             >
-              We have been serving the people of Zaheerabad, Narayankhed, Andole, Medak, and the
-              wider Telangana region since 2016. Every ride is a promise of safety, punctuality, and
-              comfort.
+              Many of our customers are travelling with parents, children, or elders for darshan,
+              dargah visits, airport pickup, or long-distance family trips. We keep the booking
+              simple, the vehicle comfortable, and the price clear before the journey starts.
             </motion.p>
 
             {/* Highlight stats */}

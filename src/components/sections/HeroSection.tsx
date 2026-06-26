@@ -1,180 +1,110 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Phone, MapPin, Star, ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, Car, MessageCircle, Phone, ShieldCheck } from "lucide-react";
+import { airportPackages, formatPackagePrice, rentalPackages, tourPackages } from "@/data/packages";
 
-const stats = [
-  { value: "5000+", label: "Happy Passengers" },
-  { value: "8+", label: "Years Experience" },
-  { value: "50+", label: "Routes Covered" },
-  { value: "4.9★", label: "Average Rating" },
-];
-
-const heroDestinations = [
-  "Hyderabad",
-  "Shamshabad Airport",
-  "Miyapur",
-  "HITEC City",
-  "Pune",
-  "Mumbai",
+const quickStats = [
+  { label: "Tour packages", value: `${tourPackages.length}+` },
+  { label: "Airport fare", value: formatPackagePrice(airportPackages[0].sedanPrice) },
+  { label: "Full day rental", value: formatPackagePrice(rentalPackages[2].sedanPrice) },
 ];
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-slate-900 overflow-hidden flex flex-col">
-      {/* Background gradient layers */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.15),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(99,102,241,0.1),transparent_60%)]" />
-
-      {/* Grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
+    <section className="relative min-h-[92vh] overflow-hidden bg-slate-950 text-white">
+      <Image
+        src="/images/ayaan-travels-hero.png"
+        alt="Ayaan Travels cab on highway from Zaheerabad"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
       />
+      <div className="absolute inset-0 bg-slate-950/70 md:bg-linear-to-r md:from-slate-950 md:via-slate-950/82 md:to-slate-950/18" />
 
-      {/* Main content */}
-      <div className="relative flex-1 flex items-center pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6"
-            >
-              <MapPin className="w-3.5 h-3.5 text-amber-400" />
-              <span className="text-amber-400 text-sm font-medium">
-                Zaheerabad, Telangana — Serving All of South India
-              </span>
-            </motion.div>
+      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-4 pb-14 pt-28 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/12 px-4 py-2 text-sm font-semibold text-amber-200"
+          >
+            <ShieldCheck className="h-4 w-4" />
+            Published cab prices from Zaheerabad
+          </motion.div>
 
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-5"
-            >
-              Travel Comfortably,
-              <br />
-              <span className="text-amber-400">Arrive Confidently.</span>
-            </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.08 }}
+            className="max-w-3xl text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl"
+          >
+            Ayaan Travels Zaheerabad tour packages, rentals and airport cabs
+          </motion.h1>
 
-            {/* Subheadline */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-xl mb-8"
-            >
-              Zaheerabad&apos;s most trusted cab service. Airport transfers, long drives, and daily
-              commutes to Hyderabad, Shamshabad, Miyapur and across Telangana — at fair, transparent
-              prices.
-            </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.16 }}
+            className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl"
+          >
+            Book 4-seater sedan and 7-seater Innova packages for Srisailam, Tirupati, Goa, Mumbai,
+            Shirdi, Hyderabad Airport and local rentals. Clear prices, clean vehicles, and direct
+            phone booking.
+          </motion.p>
 
-            {/* Destination chips */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-2 mb-10"
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.24 }}
+            className="mt-9 flex flex-col gap-3 sm:flex-row"
+          >
+            <a
+              href="#packages"
+              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-amber-400 px-7 py-4 text-base font-black text-slate-950 shadow-lg shadow-amber-500/20 transition hover:bg-amber-300"
             >
-              {heroDestinations.map((dest) => (
-                <span
-                  key={dest}
-                  className="bg-white/5 border border-white/10 text-slate-300 text-sm px-3 py-1 rounded-full"
-                >
-                  {dest}
-                </span>
-              ))}
-              <span className="text-slate-500 text-sm px-3 py-1">& 20+ more routes</span>
-            </motion.div>
-
-            {/* CTA buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4"
+              See package prices
+              <ArrowRight className="h-5 w-5" />
+            </a>
+            <a
+              href="tel:+919876543210"
+              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-7 py-4 text-base font-bold text-white backdrop-blur transition hover:bg-white/16"
             >
-              <a
-                href="#booking"
-                className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-8 py-4 rounded-xl text-base transition-all shadow-lg shadow-amber-500/25 hover:shadow-amber-400/30 hover:-translate-y-0.5"
-              >
-                Get Price Estimate
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="tel:+919876543210"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold px-8 py-4 rounded-xl text-base transition-all"
-              >
-                <Phone className="w-4 h-4 text-amber-400" />
-                Call +91 98765 43210
-              </a>
-            </motion.div>
-
-            {/* Trust indicators */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-8 flex items-center gap-3"
+              <Phone className="h-5 w-5 text-amber-300" />
+              Call +91 98765 43210
+            </a>
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-green-300/25 bg-green-400/12 px-7 py-4 text-base font-bold text-white backdrop-blur transition hover:bg-green-400/18"
             >
-              <div className="flex -space-x-2">
-                {["SY", "PL", "FS", "RG"].map((initials) => (
-                  <div
-                    key={initials}
-                    className="w-8 h-8 rounded-full bg-linear-to-br from-amber-400 to-orange-500 border-2 border-slate-900 flex items-center justify-center text-[10px] font-bold text-slate-900"
-                  >
-                    {initials}
-                  </div>
-                ))}
-              </div>
-              <div className="flex items-center gap-1.5">
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                  ))}
-                </div>
-                <span className="text-slate-400 text-sm">Rated 4.9 by 500+ riders</span>
-              </div>
-            </motion.div>
-          </div>
+              <MessageCircle className="h-5 w-5 text-green-300" />
+              WhatsApp
+            </a>
+          </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.34 }}
+          className="mt-12 grid max-w-4xl grid-cols-1 overflow-hidden rounded-2xl border border-white/12 bg-white/10 backdrop-blur sm:grid-cols-3"
+        >
+          {quickStats.map((stat) => (
+            <div key={stat.label} className="border-white/12 px-5 py-5 sm:border-r sm:last:border-r-0">
+              <div className="flex items-center gap-2 text-sm font-semibold text-slate-300">
+                <Car className="h-4 w-4 text-amber-300" />
+                {stat.label}
+              </div>
+              <div className="mt-2 text-3xl font-black text-white">{stat.value}</div>
+            </div>
+          ))}
+        </motion.div>
       </div>
-
-      {/* Stats bar */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
-        className="relative border-t border-white/10 bg-white/3 backdrop-blur-sm"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
-            {stats.map((stat) => (
-              <div key={stat.label} className="px-6 py-5 text-center">
-                <div className="text-2xl font-black text-white mb-0.5">{stat.value}</div>
-                <div className="text-slate-500 text-xs uppercase tracking-wide">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-32 right-8 hidden lg:flex flex-col items-center gap-2"
-        animate={{ y: [0, 6, 0] }}
-        transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-      >
-        <ChevronDown className="w-5 h-5 text-slate-600" />
-      </motion.div>
     </section>
   );
 }

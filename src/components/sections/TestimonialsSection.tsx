@@ -98,7 +98,7 @@ export default function TestimonialsSection() {
             Join thousands of satisfied travelers from Zaheerabad and across Telangana
           </p>
           <a
-            href="#booking"
+            href="#packages"
             className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-8 py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-amber-500/20"
           >
             Book Your Ride Now →

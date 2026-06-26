@@ -1,10 +1,10 @@
 import { Car, Phone, Mail, MapPin, Globe, MessageCircle } from "lucide-react";
 
 const quickLinks = [
-  { label: "Airport Transfers", href: "#services" },
-  { label: "Long Distance Drives", href: "#services" },
-  { label: "Office Commute", href: "#services" },
-  { label: "Book a Ride", href: "#booking" },
+  { label: "Tour Packages", href: "#packages" },
+  { label: "Rental Packages", href: "#packages" },
+  { label: "Airport Pickup & Drop", href: "#packages" },
+  { label: "Why Choose Us", href: "#why-us" },
   { label: "Our Drivers", href: "#drivers" },
 ];
 
@@ -42,8 +42,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm leading-relaxed mb-5">
-              Your trusted travel partner in Zaheerabad, Telangana. Professional cab services for
-              airport transfers, long drives, and daily commutes across Hyderabad and beyond.
+              Your trusted travel partner in Zaheerabad, Telangana. Tour packages, local rentals,
+              airport pickup and airport drop with 4-seater sedan and 7-seater Innova options.
             </p>
             <div className="flex gap-3">
               <a
@@ -142,7 +142,7 @@ export default function Footer() {
             Telangana
           </p>
           <p className="text-xs text-slate-600">
-            Serving Zaheerabad • Hyderabad • Shamshabad • Miyapur • Patancheru • Medak • Sangareddy
+            Serving Zaheerabad • Srisailam • Tirupati • Shirdi • Goa • Mumbai • Hyderabad Airport
           </p>
         </div>
       </div>

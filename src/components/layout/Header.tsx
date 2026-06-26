@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X, Car } from "lucide-react";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Book a Ride", href: "#booking" },
+  { label: "Packages", href: "#packages" },
+  { label: "Why Us", href: "#why-us" },
   { label: "Testimonials", href: "#testimonials" },
-  { label: "Our Drivers", href: "#drivers" },
+  { label: "Drivers", href: "#drivers" },
   { label: "Contact", href: "#contact" },
 ];
 
