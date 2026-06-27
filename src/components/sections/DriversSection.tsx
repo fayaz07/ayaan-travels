@@ -135,7 +135,7 @@ export default function DriversSection() {
             className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-8 py-3.5 rounded-xl text-sm transition-all"
           >
             <Phone className="w-4 h-4" />
-            +91 98765 43210 — General Helpline
+            {drivers[0].phone} — General Helpline
           </a>
         </motion.div>
       </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, MapPin, Clock } from "lucide-react";
+import { drivers } from "@/data/drivers";
 
 export default function ContactSection() {
   return (
@@ -56,7 +57,7 @@ export default function ContactSection() {
                   <Phone className="w-5 h-5 text-amber-400 group-hover:text-slate-900 transition-colors" />
                 </div>
                 <div>
-                  <div className="text-white font-semibold text-sm">+91 98765 43210</div>
+                  <div className="text-white font-semibold text-sm">{drivers[0].phone}</div>
                   <div className="text-slate-400 text-xs">Primary — Mohammed Ayaan</div>
                 </div>
               </a>
@@ -69,13 +70,13 @@ export default function ContactSection() {
                   <Phone className="w-5 h-5 text-amber-400 group-hover:text-slate-900 transition-colors" />
                 </div>
                 <div>
-                  <div className="text-white font-semibold text-sm">+91 87654 32109</div>
+                  <div className="text-white font-semibold text-sm">{drivers[1].phone}</div>
                   <div className="text-slate-400 text-xs">Secondary — Office Line</div>
                 </div>
               </a>
 
               <a
-                href="https://wa.me/919876543210"
+                href={`https://wa.me/${drivers[0].phone.replaceAll(" ", "").replace("+", "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 bg-white/5 hover:bg-green-500/10 border border-white/10 hover:border-green-500/40 rounded-xl p-4 transition-all group"
