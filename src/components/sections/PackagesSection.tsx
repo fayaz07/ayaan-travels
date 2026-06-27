@@ -1,22 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  CalendarDays,
-  CarFront,
-  Clock,
-  Info,
-  MapPinned,
-  Plane,
-  Route,
-  Users,
-} from "lucide-react";
-import {
-  airportPackages,
-  formatPackagePrice,
-  rentalPackages,
-  tourPackages,
-} from "@/data/packages";
+import { CalendarDays, CarFront, Clock, Info, MapPinned, Plane, Route, Users } from "lucide-react";
+import { airportPackages, formatPackagePrice, rentalPackages, tourPackages } from "@/data/packages";
+import { drivers } from "@/data/drivers";
+import { Phone } from "lucide-react";
+
+const phone = drivers[0].phone;
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -25,23 +15,32 @@ const fadeIn = {
 
 function PricePair({ sedanPrice, innovaPrice }: { sedanPrice: number; innovaPrice: number }) {
   return (
-    <div className="grid grid-cols-2 gap-2">
-      <div className="rounded-lg bg-emerald-50 px-3 py-3">
-        <div className="flex items-center gap-1.5 text-xs font-bold uppercase text-emerald-700">
-          <Users className="h-3.5 w-3.5" /> 4 seater
+    <div>
+      <div className="grid grid-cols-2 gap-2">
+        <div className="rounded-lg bg-emerald-50 px-3 py-3">
+          <div className="flex items-center gap-1.5 text-xs font-bold uppercase text-emerald-700">
+            <Users className="h-3.5 w-3.5" /> 4 seater
+          </div>
+          <div className="mt-1 text-xl font-black text-slate-950">
+            {formatPackagePrice(sedanPrice)}
+          </div>
         </div>
-        <div className="mt-1 text-xl font-black text-slate-950">
-          {formatPackagePrice(sedanPrice)}
+        <div className="rounded-lg bg-amber-50 px-3 py-3">
+          <div className="flex items-center gap-1.5 text-xs font-bold uppercase text-amber-700">
+            <CarFront className="h-3.5 w-3.5" /> Innova
+          </div>
+          <div className="mt-1 text-xl font-black text-slate-950">
+            {formatPackagePrice(innovaPrice)}
+          </div>
         </div>
       </div>
-      <div className="rounded-lg bg-amber-50 px-3 py-3">
-        <div className="flex items-center gap-1.5 text-xs font-bold uppercase text-amber-700">
-          <CarFront className="h-3.5 w-3.5" /> Innova
-        </div>
-        <div className="mt-1 text-xl font-black text-slate-950">
-          {formatPackagePrice(innovaPrice)}
-        </div>
-      </div>
+      <a
+        href={`tel:${phone.replaceAll(" ", "")}`}
+        className="flex items-center justify-center gap-2 bg-amber-500  font-bold text-sm px-4 py-3 rounded-lg mt-2 text-white"
+      >
+        <Phone className="w-4 h-4" />
+        Call Now
+      </a>
     </div>
   );
 }
@@ -102,7 +101,7 @@ export default function PackagesSection() {
                 </h3>
               </div>
               <a
-                href="tel:+919876543210"
+                href={`tel:${phone.replaceAll(" ", "")}`}
                 className="inline-flex min-h-12 items-center justify-center rounded-xl bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800"
               >
                 Call to book

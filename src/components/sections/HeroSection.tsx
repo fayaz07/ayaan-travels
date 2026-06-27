@@ -4,12 +4,15 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Car, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 import { airportPackages, formatPackagePrice, rentalPackages, tourPackages } from "@/data/packages";
+import { drivers } from "@/data/drivers";
 
 const quickStats = [
   { label: "Tour packages", value: `${tourPackages.length}+` },
   { label: "Airport fare", value: formatPackagePrice(airportPackages[0].sedanPrice) },
   { label: "Full day rental", value: formatPackagePrice(rentalPackages[2].sedanPrice) },
 ];
+
+const phone = drivers[0].phone;
 
 export default function HeroSection() {
   return (
@@ -70,14 +73,14 @@ export default function HeroSection() {
               <ArrowRight className="h-5 w-5" />
             </a>
             <a
-              href="tel:+919876543210"
+              href={`tel:${phone.replaceAll(" ", "")}`}
               className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-7 py-4 text-base font-bold text-white backdrop-blur transition hover:bg-white/16"
             >
               <Phone className="h-5 w-5 text-amber-300" />
-              Call +91 98765 43210
+              Call {phone}
             </a>
             <a
-              href="https://wa.me/919876543210"
+              href={`https://wa.me/${phone.replaceAll(" ", "").replace("+", "")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-green-300/25 bg-green-400/12 px-7 py-4 text-base font-bold text-white backdrop-blur transition hover:bg-green-400/18"
@@ -95,7 +98,10 @@ export default function HeroSection() {
           className="mt-12 grid max-w-4xl grid-cols-1 overflow-hidden rounded-2xl border border-white/12 bg-white/10 backdrop-blur sm:grid-cols-3"
         >
           {quickStats.map((stat) => (
-            <div key={stat.label} className="border-white/12 px-5 py-5 sm:border-r sm:last:border-r-0">
+            <div
+              key={stat.label}
+              className="border-white/12 px-5 py-5 sm:border-r sm:last:border-r-0"
+            >
               <div className="flex items-center gap-2 text-sm font-semibold text-slate-300">
                 <Car className="h-4 w-4 text-amber-300" />
                 {stat.label}

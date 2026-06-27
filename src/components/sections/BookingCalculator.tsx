@@ -414,7 +414,7 @@ export default function BookingCalculator() {
                               </div>
                             </div>
                             <a
-                              href={`tel:${driver.phone.replace(/\s/g, "")}`}
+                              href={`tel:${driver.phone.replaceAll(/\s/g, "")}`}
                               className="flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold text-xs px-3 py-2 rounded-lg transition-colors shrink-0"
                             >
                               <Phone className="w-3 h-3" /> Call

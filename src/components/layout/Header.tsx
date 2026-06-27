@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X } from "lucide-react";
-import Image from "next/image";
+import { drivers } from "@/data/drivers";
 
 const navLinks = [
   { label: "Packages", href: "#packages" },
@@ -12,6 +12,8 @@ const navLinks = [
   { label: "Drivers", href: "#drivers" },
   { label: "Contact", href: "#contact" },
 ];
+
+const phone = drivers[0].phone;
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -62,7 +64,7 @@ export default function Header() {
 
           {/* CTA */}
           <a
-            href="tel:+919876543210"
+            href="tel:+919010679036"
             className="hidden md:flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold text-sm px-4 py-2 rounded-lg transition-colors shadow-md"
           >
             <Phone className="w-4 h-4" />
@@ -101,7 +103,7 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="tel:+919876543210"
+                href={`tel:${phone.replaceAll(" ", "")}`}
                 className="flex items-center justify-center gap-2 bg-amber-500 text-slate-900 font-semibold text-sm px-4 py-3 rounded-lg mt-2"
               >
                 <Phone className="w-4 h-4" />

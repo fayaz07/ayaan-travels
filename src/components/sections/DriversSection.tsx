@@ -108,7 +108,7 @@ export default function DriversSection() {
 
               {/* Call button */}
               <a
-                href={`tel:${driver.phone.replace(/\s/g, "")}`}
+                href={`tel:${driver.phone.replaceAll(/\s/g, "")}`}
                 className="w-full flex items-center justify-center gap-2 bg-slate-900 group-hover:bg-amber-500 text-white group-hover:text-slate-900 font-semibold py-3 rounded-xl text-sm transition-all duration-300"
               >
                 <Phone className="w-4 h-4" />
